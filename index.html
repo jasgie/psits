@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Packing checklist: 14th PSITS Regional Convention</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@600;800&family=Source+Sans+3:wght@400;600&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#f3f7fc;--card:#fff;--ink:#12213f;--mute:#56647f;--line:#d5deee;--navy:#14307a;--sun:#f2b705;--red:#d62f2f;--on-navy:#fff;
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0e1730;--card:#16223f;--ink:#e8eefb;--mute:#9aa8c6;--line:#2a3a60;--navy:#6f8ff0;--on-navy:#0e1730}}
+:root[data-theme="dark"]{--bg:#0e1730;--card:#16223f;--ink:#e8eefb;--mute:#9aa8c6;--line:#2a3a60;--navy:#6f8ff0;--on-navy:#0e1730}
+html{scroll-padding-top:calc(env(safe-area-inset-top,0px) + 96px)}
+*,*::before,*::after{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:"Source Sans 3",system-ui,sans-serif;font-size:17px;line-height:1.5}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);background:var(--bg);z-index:10}
+h1,h2{font-family:"Bricolage Grotesque",system-ui,sans-serif;line-height:1.1;margin:0}
+header{max-width:760px;margin:0 auto;padding:28px 18px 8px}
+h1{font-size:clamp(30px,6vw,46px);font-weight:800;color:var(--navy)}
+.sub{color:var(--mute);margin:8px 0 0}
+.bar{position:sticky;top:env(safe-area-inset-top,0px);z-index:11;background:var(--bg);border-bottom:1px solid var(--line);padding:10px 18px}
+.bar-in{max-width:760px;margin:0 auto}
+.meter{height:10px;border-radius:5px;background:var(--line);overflow:hidden}
+.meter i{display:block;height:100%;width:0;background:var(--sun);transition:width .25s}
+.count{display:flex;justify-content:space-between;font-size:14px;color:var(--mute);margin-top:4px}
+main{max-width:760px;margin:0 auto;padding:18px}
+.pick h2{font-size:20px;margin-bottom:4px}
+.pick p{margin:0 0 10px;color:var(--mute);font-size:15px}
+.chips{display:flex;flex-wrap:wrap;gap:8px}
+.chip{font:inherit;font-size:15px;padding:6px 12px;border:1.5px solid var(--line);border-radius:999px;background:var(--card);color:var(--ink);cursor:pointer}
+.chip[aria-pressed="true"]{background:var(--navy);border-color:var(--navy);color:var(--on-navy)}
+.chip:focus-visible,.item input:focus-visible,.reset:focus-visible{outline:3px solid var(--red);outline-offset:2px}
+section{background:var(--card);border:1px solid var(--line);border-left:6px solid var(--navy);border-radius:10px;margin:22px 0;padding:16px 16px 8px}
+section.base{border-left-color:var(--red)}
+section h2{font-size:22px}
+.note{color:var(--mute);font-size:15px;margin:2px 0 8px}
+.item{display:flex;gap:12px;align-items:flex-start;padding:10px 0;border-top:1px solid var(--line);cursor:pointer}
+.item input{width:22px;height:22px;margin:2px 0 0;accent-color:var(--navy);flex:none}
+.item input:checked+span{color:var(--mute);text-decoration:line-through}
+.tag{font-size:13px;color:var(--mute);border:1px solid var(--line);border-radius:4px;padding:0 5px;margin-left:6px;white-space:nowrap}
+.foot{display:flex;flex-wrap:wrap;gap:12px;align-items:center;justify-content:space-between;color:var(--mute);font-size:14px;margin:8px 0 40px}
+.reset{font:inherit;font-size:14px;padding:6px 12px;border:1.5px solid var(--line);border-radius:8px;background:var(--card);color:var(--ink);cursor:pointer}
+@media print{.bar,.pick,.reset{display:none}section{break-inside:avoid}}
+</style>
+</head>
+<body>
+<header>
+<h1>Packing checklist</h1>
+<p class="sub">14th PSITS Regional Convention, Phase 2. November 6–7, 2026, Notre Dame of Tacurong College, Tacurong City.</p>
+</header>
+<div class="bar"><div class="bar-in">
+<div class="meter" role="progressbar" aria-label="Packed" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0"><i id="fill"></i></div>
+<div class="count"><span id="n">0 of 0 packed</span><span id="pct">0%</span></div>
+</div></div>
+<main>
+<div class="pick">
+<h2>Pick your events</h2>
+<p>Tap the events you joined to add their items. Until you pick one, only the items for everyone show.</p>
+<div class="chips" id="chips"></div>
+</div>
+<div id="list"></div>
+<div class="foot"><span>Items tagged “suggested” are tips, not IRR requirements. Check your coach for any change.</span><button class="reset" id="reset" type="button">Clear all ticks</button></div>
+</main>
+<script>
+var S="suggested";
+var D=[
+{id:"all",t:"Everyone",n:"Required for every participant.",b:1,i:[
+["School ID (valid, required)"],
+["Water bottle and light snacks",S],
+["Delegation shirt or banner to show school spirit",S],
+["Beddings: blanket, pillow and sleeping mat or sheet",S],
+["Toiletries and hygiene kit: toothbrush, soap, towel, deodorant and personal items",S],
+["Mug or tumbler for your morning coffee",S]]},
+{id:"prog",c:"Programming",t:"Programming (C++, Python, Java, MySQL)",n:"Two students per entry share one workstation.",i:[
+["Laptop and charger. The IRR is unclear on whether workstations are provided, so bring one and confirm with your coach."],
+["Pens and scratch paper",S]]},
+{id:"quiz",c:"Quiz Bowl",t:"Quiz Bowl",n:"Bond paper and answer cards are provided.",i:[
+["Pens"],["Water and a light snack for a long session",S]]},
+{id:"pasm",c:"Problem Analysis",t:"Problem Analysis and Solution Making",n:"No phones, tablets or other devices inside the room.",i:[
+["Laptop and charger"],["Extension wire"],["Printed references"],
+["USB flash drive with reference files (it is scanned before you enter)"],
+["Plan to hand in a PDF of your narrative and diagrams",S]]},
+{id:"dav",c:"Data Analysis",t:"Data Analysis and Visualization",n:"Power BI Desktop is the required software.",i:[
+["Laptop with Power BI Desktop installed and tested"],["Charger and extension wire"],["Printed references"],["Mouse",S]]},
+{id:"bench",c:"Bench Yelling",t:"Bench Yelling",n:"Filipino and English only. No electronic instruments.",i:[
+["Hard copy of the yell (long bond paper, 2 columns, justified, Arial 12)"],
+["Costumes and props (decent, nothing vulgar)"],["Drums or other non-electronic instruments, if used"],
+["Water for the whole group",S]]},
+{id:"hiphop",c:"Hip-hop",t:"Hip-hop Dance",n:"Clean music only. No fire effects or weapons.",i:[
+["Music file on a USB drive"],["Backup copy of the music on a phone",S],["Costumes (decent)"],["Props, if any"]]},
+{id:"trio",c:"Trio Singing",t:"Trio Singing Contest",n:"OPM hit song, 3 to 4 minutes.",i:[
+["Minus-one or karaoke track on a USB drive"],["Backup copy of the track on a phone",S],["Decent attire that fits the song"]]},
+{id:"drama",c:"Drama Reel",t:"Short IT Drama Reels",n:"Entries are pre-produced.",i:[
+["USB flash drive with the video (.mp4, .mov, .avi, .mpg, .flv or .mkv)"],
+["File named “Entry No. – Short IT Drama Reels”"],
+["10-second title card with the title, member names and running time"],
+["School number shown in the video, with no school name or logo"],
+["English or Filipino subtitles, if the dialogue is in another language"]]},
+{id:"media",c:"Infographics / Poster / Logo",t:"Infographics, Digital Poster, Logo Making",n:"Computers and Adobe software are provided. No stock photos allowed.",i:[
+["Nothing required. Know the convention theme by heart."],["Mouse or drawing stylus",S],["Your own reference notes (no stock photos in the final)",S]]},
+{id:"tshirt",c:"T-shirt",t:"Uniform T-shirt Design",n:"Submitted at registration.",i:[
+["The actual shirt in your school’s assigned color"],
+["Shirt shows the school logo, “14th PSITS Regional Convention,” the theme and a small host convention logo"],
+["Short rationale for your design"],["A spare shirt",S]]},
+{id:"ewaste",c:"E-waste",t:"E-waste Installation Art Device",n:"2D wall-mounted, 4 ft by 4 ft. Hands off during judging.",i:[
+["Finished piece with back-mounting hardware"],["Entry number and printed 100-word narrative"],
+["An officer in charge to stay with the piece"],["Power bank and extension cord",S],["Spare LEDs, glue and basic tools for quick repairs",S]]},
+{id:"ml",c:"Mobile Legends",t:"Mobile Legends",n:"Only the registered players and the coach take part.",i:[
+["Fully charged devices and power banks"],["Stable internet connection"],["Earphones",S],["Coach ready with a protest letter, if needed"]]},
+{id:"cod",c:"COD",t:"Call of Duty Mobile",n:"Your team provides its own internet.",i:[
+["Fully charged devices and power banks"],["Your own internet connection"],
+["Soft copy of the creativity picture with the team name"],["Operator and weapon skins set to default"],
+["Coach ready with a protest letter and ₱5,000 fee, if needed"]]}
+];
+var st={t:{},e:[]};
+try{var raw=localStorage.getItem("psits-pack");if(raw){var p=JSON.parse(raw);if(p&&p.t)st=p}}catch(x){}
+function save(){try{localStorage.setItem("psits-pack",JSON.stringify(st))}catch(x){}}
+var list=document.getElementById("list"),chips=document.getElementById("chips");
+D.forEach(function(s){
+ var sec=document.createElement("section");sec.id="s-"+s.id;if(s.b)sec.className="base";
+ var h='<h2>'+s.t+'</h2><p class="note">'+s.n+'</p>';
+ s.i.forEach(function(it,k){var key=s.id+k;
+  h+='<label class="item"><input type="checkbox" data-k="'+key+'"'+(st.t[key]?" checked":"")+'><span>'+it[0]+(it[1]?'<em class="tag">'+it[1]+'</em>':'')+'</span></label>';});
+ sec.innerHTML=h;list.appendChild(sec);
+ if(!s.b){var b=document.createElement("button");b.type="button";b.className="chip";b.textContent=s.c;b.dataset.id=s.id;
+  b.setAttribute("aria-pressed",st.e.indexOf(s.id)>-1?"true":"false");chips.appendChild(b);}
+});
+function render(){
+ var tot=0,done=0;
+ D.forEach(function(s){var sec=document.getElementById("s-"+s.id);
+  var show=s.b||st.e.indexOf(s.id)>-1;sec.hidden=!show;
+  if(show){sec.querySelectorAll("input").forEach(function(c){tot++;if(c.checked)done++})}});
+ var pc=tot?Math.round(done*100/tot):0;
+ document.getElementById("fill").style.width=pc+"%";
+ document.getElementById("n").textContent=done+" of "+tot+" packed";
+ document.getElementById("pct").textContent=pc+"%";
+ document.querySelector(".meter").setAttribute("aria-valuenow",pc);
+}
+list.addEventListener("change",function(e){var c=e.target;if(c.dataset.k){if(c.checked)st.t[c.dataset.k]=1;else delete st.t[c.dataset.k];save();render()}});
+chips.addEventListener("click",function(e){var b=e.target.closest(".chip");if(!b)return;
+ var id=b.dataset.id,i=st.e.indexOf(id);if(i>-1)st.e.splice(i,1);else st.e.push(id);
+ b.setAttribute("aria-pressed",i>-1?"false":"true");save();render()});
+document.getElementById("reset").addEventListener("click",function(){st.t={};list.querySelectorAll("input").forEach(function(c){c.checked=false});save();render()});
+render();
+</script>
+</body>
+</html>
