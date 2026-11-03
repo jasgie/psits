@@ -5,55 +5,99 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Packing checklist: 14th PSITS Regional Convention</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@600;800&family=Source+Sans+3:wght@400;600&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,800..900&family=Michroma&family=Source+Sans+3:wght@400;600&display=swap" rel="stylesheet">
 <style>
-:root{--bg:#f3f7fc;--card:#fff;--ink:#12213f;--mute:#56647f;--line:#d5deee;--navy:#14307a;--sun:#f2b705;--red:#d62f2f;--on-navy:#fff;
+:root{color-scheme:light;--outline:#9b82c8;--track:#e6dcf5;--tint:#f3ebfd;--bg:#f7f2fe;--card:#fff;--ink:#1a0f33;--mute:#5b4b7a;--line:#ddd0f2;--brand:#6b21c8;--on-brand:#fff;--head:#2a0f5c;--accent:#f2b705;--focus:#2a0f5c;--collar:#2a0f5c;
+--hero-bg:linear-gradient(160deg,#d6b9fb,#b983f3);--hero-ink:#12082b;--circuit:#2a0f5c;
 box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
-@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0e1730;--card:#16223f;--ink:#e8eefb;--mute:#9aa8c6;--line:#2a3a60;--navy:#6f8ff0;--on-navy:#0e1730}}
-:root[data-theme="dark"]{--bg:#0e1730;--card:#16223f;--ink:#e8eefb;--mute:#9aa8c6;--line:#2a3a60;--navy:#6f8ff0;--on-navy:#0e1730}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){color-scheme:dark;--outline:#7f62c4;--track:#2c1b57;--tint:#281752;--bg:#140a2b;--card:#1e1140;--ink:#f3ebff;--mute:#b7a6d9;--line:#3a2868;--brand:#c9a3f7;--on-brand:#1a0a33;--head:#e4d3ff;--focus:#f2b705;--collar:#5a2cc0;--hero-bg:linear-gradient(160deg,#2a0f5c,#3d1782);--hero-ink:#f3ebff;--circuit:#9b6cf0}}
+:root[data-theme="dark"]{color-scheme:dark;--outline:#7f62c4;--track:#2c1b57;--tint:#281752;--bg:#140a2b;--card:#1e1140;--ink:#f3ebff;--mute:#b7a6d9;--line:#3a2868;--brand:#c9a3f7;--on-brand:#1a0a33;--head:#e4d3ff;--focus:#f2b705;--collar:#5a2cc0;--hero-bg:linear-gradient(160deg,#2a0f5c,#3d1782);--hero-ink:#f3ebff;--circuit:#9b6cf0}
 html{scroll-padding-top:calc(env(safe-area-inset-top,0px) + 96px)}
 *,*::before,*::after{box-sizing:border-box}
 body{margin:0;background:var(--bg);color:var(--ink);font-family:"Source Sans 3",system-ui,sans-serif;font-size:17px;line-height:1.5}
 body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);background:var(--bg);z-index:10}
-h1,h2{font-family:"Bricolage Grotesque",system-ui,sans-serif;line-height:1.1;margin:0}
-header{max-width:760px;margin:0 auto;padding:28px 18px 8px}
-h1{font-size:clamp(30px,6vw,46px);font-weight:800;color:var(--navy)}
-.sub{color:var(--mute);margin:8px 0 0}
-.bar{position:sticky;top:env(safe-area-inset-top,0px);z-index:11;background:var(--bg);border-bottom:1px solid var(--line);padding:10px 18px}
-.bar-in{max-width:760px;margin:0 auto}
-.meter{height:10px;border-radius:5px;background:var(--line);overflow:hidden}
-.meter i{display:block;height:100%;width:0;background:var(--sun);transition:width .25s}
-.count{display:flex;justify-content:space-between;font-size:14px;color:var(--mute);margin-top:4px}
-main{max-width:760px;margin:0 auto;padding:18px}
-.pick h2{font-size:20px;margin-bottom:4px}
+h1,h2{font-family:Archivo,system-ui,sans-serif;font-weight:800;font-variation-settings:"wdth" 112;line-height:1.1;margin:0}
+.hero{position:relative;overflow:hidden;background:var(--hero-bg);color:var(--hero-ink);border-bottom:10px solid var(--collar)}
+.hero::before{content:"";position:absolute;inset:0;background:var(--circuit);opacity:.28;-webkit-mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='260' height='260' fill='none' stroke='%23000' stroke-width='2'%3E%3Cpath d='M0 40h60l20 20h50M80 60v60h40M130 60l30-30h100M30 260v-80h50l20-20M170 260v-60l30-30h60M210 100v40'/%3E%3Ccircle cx='130' cy='60' r='5'/%3E%3Ccircle cx='120' cy='120' r='5'/%3E%3Ccircle cx='210' cy='140' r='5'/%3E%3Ccircle cx='100' cy='160' r='5'/%3E%3C/svg%3E") 0 0/260px;mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='260' height='260' fill='none' stroke='%23000' stroke-width='2'%3E%3Cpath d='M0 40h60l20 20h50M80 60v60h40M130 60l30-30h100M30 260v-80h50l20-20M170 260v-60l30-30h60M210 100v40'/%3E%3Ccircle cx='130' cy='60' r='5'/%3E%3Ccircle cx='120' cy='120' r='5'/%3E%3Ccircle cx='210' cy='140' r='5'/%3E%3Ccircle cx='100' cy='160' r='5'/%3E%3C/svg%3E") 0 0/260px}
+.hero::after{content:"";position:absolute;top:0;right:0;width:40px;height:100%;background:linear-gradient(115deg,transparent 0 6px,var(--collar) 6px 9px,transparent 9px 15px,var(--collar) 15px 18px,transparent 18px 24px,var(--collar) 24px 27px,transparent 27px)}
+.hero-in{position:relative;z-index:1;max-width:760px;margin:0 auto;padding:30px 18px 24px}
+.mark{margin:0;font-family:Archivo,system-ui,sans-serif;font-weight:900;font-variation-settings:"wdth" 125;text-transform:uppercase;line-height:.9}
+.mark .n{display:block;font-size:clamp(18px,4.5vw,30px)}
+.mark .n sup{font-size:.6em;vertical-align:.55em}
+.mark .big{display:block;font-size:clamp(64px,19vw,140px);letter-spacing:-.02em}
+.mark .reg{display:block;font-family:Michroma,Archivo,sans-serif;font-weight:400;font-variation-settings:normal;font-size:clamp(10px,2.7vw,19px);letter-spacing:.03em;margin-top:8px}
+h1{font-size:clamp(24px,5vw,34px);margin-top:22px}
+.theme{margin:4px 0 0;font-weight:600;font-size:17px}
+.sub{margin:10px 0 0;font-size:16px}
+.bar{position:sticky;top:env(safe-area-inset-top,0px);z-index:11;background:var(--bg);border-bottom:1px solid var(--line);padding:12px 0}
+.bar-in{max-width:760px;margin:0 auto;padding:0 18px}
+.meter{height:12px;border-radius:6px;background:var(--track);box-shadow:inset 0 0 0 1px var(--outline);overflow:hidden}
+.meter i{display:block;height:100%;width:0;border-radius:6px;background:var(--brand);transition:width .25s}
+.count{display:flex;justify-content:space-between;font-size:14px;color:var(--mute);margin-top:6px}
+#pct{font-weight:600;color:var(--head)}
+main{max-width:760px;margin:0 auto;padding:24px 18px 0}
+.pick h2{font-size:20px;margin-bottom:4px;color:var(--head)}
 .pick p{margin:0 0 10px;color:var(--mute);font-size:15px}
 .chips{display:flex;flex-wrap:wrap;gap:8px}
-.chip{font:inherit;font-size:15px;padding:6px 12px;border:1.5px solid var(--line);border-radius:999px;background:var(--card);color:var(--ink);cursor:pointer}
-.chip[aria-pressed="true"]{background:var(--navy);border-color:var(--navy);color:var(--on-navy)}
-.chip:focus-visible,.item input:focus-visible,.reset:focus-visible{outline:3px solid var(--red);outline-offset:2px}
-section{background:var(--card);border:1px solid var(--line);border-left:6px solid var(--navy);border-radius:10px;margin:22px 0;padding:16px 16px 8px}
-section.base{border-left-color:var(--red)}
-section h2{font-size:22px}
+.chip{font:inherit;font-size:15px;min-height:40px;padding:6px 14px;border:1.5px solid var(--outline);border-radius:999px;background:var(--card);color:var(--ink);cursor:pointer;transition:background .15s,border-color .15s}
+.chip:hover{border-color:var(--brand);background:var(--tint)}
+.chip[aria-pressed="true"]{background:var(--brand);border-color:var(--brand);color:var(--on-brand);font-weight:600}
+.chip[aria-pressed="true"]::before{content:"\2713\00a0"}
+.chip:focus-visible,.item input:focus-visible,.reset:focus-visible{outline:3px solid var(--focus);outline-offset:2px}
+section{background:var(--card);border:1px solid var(--line);border-left:6px solid var(--brand);border-radius:8px;margin:22px 0;padding:16px 16px 8px}
+section.base{border-left-color:var(--accent)}
+section h2{font-size:22px;color:var(--head)}
+.sh{display:flex;align-items:baseline;justify-content:space-between;gap:12px}
+.sc{font-size:13px;font-weight:600;color:var(--mute);border:1px solid var(--outline);border-radius:999px;padding:0 10px;white-space:nowrap}
+.sc.done{background:var(--brand);border-color:var(--brand);color:var(--on-brand)}
 .note{color:var(--mute);font-size:15px;margin:2px 0 8px}
-.item{display:flex;gap:12px;align-items:flex-start;padding:10px 0;border-top:1px solid var(--line);cursor:pointer}
-.item input{width:22px;height:22px;margin:2px 0 0;accent-color:var(--navy);flex:none}
+.item{display:flex;gap:12px;align-items:flex-start;padding:12px 8px;margin:0 -8px;border-top:1px solid var(--line);cursor:pointer;border-radius:6px}
+.item:hover{background:var(--tint)}
+.item input{appearance:none;-webkit-appearance:none;width:24px;height:24px;margin:0;flex:none;border:2px solid var(--outline);border-radius:6px;background:var(--card) center/16px no-repeat;cursor:pointer}
+.item input:checked{background-color:#6b21c8;border-color:var(--brand);background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='none' stroke='%23fff' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M3 8.5l3.5 3.5L13 4.5'/%3E%3C/svg%3E")}
 .item input:checked+span{color:var(--mute);text-decoration:line-through}
 .tag{font-size:13px;color:var(--mute);border:1px solid var(--line);border-radius:4px;padding:0 5px;margin-left:6px;white-space:nowrap}
+.shirt{display:flex;flex-wrap:wrap;gap:20px;align-items:center;background:var(--card);border:1px solid var(--line);border-radius:8px;padding:16px;margin:0 0 28px}
+.shirt img{width:100%;max-width:300px;height:auto;aspect-ratio:1;border-radius:6px;background:#fff;flex:none;margin:0 auto}
+.zoom{position:relative;flex:none;width:100%;max-width:300px;margin:0 auto;padding:0;border:1.5px solid var(--outline);border-radius:8px;background:#fff;cursor:zoom-in;overflow:hidden}
+.zoom:focus-visible{outline:3px solid var(--focus);outline-offset:2px}
+.zoom img{display:block;width:100%;height:auto;aspect-ratio:1}
+.zoom span{position:absolute;right:8px;bottom:8px;background:#2a0f5c;color:#fff;font-size:13px;font-weight:600;padding:2px 10px;border-radius:999px}
+.lb{width:min(94vw,900px);max-height:94vh;padding:0;border:0;border-radius:8px;background:#fff;overflow:hidden}
+.lb::backdrop{background:rgba(10,4,24,.82)}
+.lb img{display:block;width:100%;height:auto;max-height:94vh;object-fit:contain}
+.lb button{position:absolute;top:10px;right:10px;min-width:44px;min-height:44px;border:0;border-radius:999px;background:#2a0f5c;color:#fff;font:inherit;font-size:22px;line-height:1;cursor:pointer}
+.lb button:focus-visible{outline:3px solid #f2b705;outline-offset:2px}
+.shirt div{flex:1 1 240px}
+.shirt h2{font-size:22px;color:var(--head)}
+.shirt p{margin:8px 0 0;color:var(--mute);font-size:15px}
 .foot{display:flex;flex-wrap:wrap;gap:12px;align-items:center;justify-content:space-between;color:var(--mute);font-size:14px;margin:8px 0 40px}
-.reset{font:inherit;font-size:14px;padding:6px 12px;border:1.5px solid var(--line);border-radius:8px;background:var(--card);color:var(--ink);cursor:pointer}
-@media print{.bar,.pick,.reset{display:none}section{break-inside:avoid}}
+.reset{font:inherit;font-size:14px;min-height:40px;padding:6px 14px;border:1.5px solid var(--outline);border-radius:8px;background:var(--card);color:var(--ink);cursor:pointer}
+.reset:hover{background:var(--tint);border-color:var(--brand)}
+@media (prefers-reduced-motion:reduce){.meter i,.chip{transition:none}}
+@media print{.bar,.pick,.reset{display:none}.hero{background:none;color:#000}.hero::before,.hero::after{display:none}section{break-inside:avoid}}
 </style>
 </head>
 <body>
-<header>
+<header class="hero"><div class="hero-in">
+<p class="mark"><span class="n">14<sup>th</sup></span><span class="big">PSITS</span><span class="reg">Regional Convention</span></p>
 <h1>Packing checklist</h1>
-<p class="sub">14th PSITS Regional Convention, Phase 2. November 6–7, 2026, Notre Dame of Tacurong College, Tacurong City.</p>
-</header>
+<p class="theme">From Ideas to Impact: IT as the Core Driver of Innovation</p>
+<p class="sub">Phase 2. November 6–7, 2026, Notre Dame of Tacurong College, Tacurong City.</p>
+</div></header>
 <div class="bar"><div class="bar-in">
 <div class="meter" role="progressbar" aria-label="Packed" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0"><i id="fill"></i></div>
 <div class="count"><span id="n">0 of 0 packed</span><span id="pct">0%</span></div>
 </div></div>
 <main>
+<figure class="shirt">
+<button type="button" class="zoom" id="zoom" aria-label="Enlarge the delegation shirt image"><img src="Purple%20PSITS%20Convention%20Shirt%20Mockup.png" width="1254" height="1254" alt="Purple 14th PSITS Regional Convention shirt with a lavender body, dark purple collar and sleeve trim, and the PSITS wordmark on the front" decoding="async"><span aria-hidden="true">Tap to enlarge</span></button>
+<div>
+<h2>HCCCI delegation shirt</h2>
+<p>Wear this shirt with your delegation to show school spirit. The design follows the convention theme, From Ideas to Impact: IT as the Core Driver of Innovation.</p>
+</div>
+</figure>
 <div class="pick">
 <h2>Pick your events</h2>
 <p>Tap the events you joined to add their items. Until you pick one, only the items for everyone show.</p>
@@ -62,6 +106,10 @@ section h2{font-size:22px}
 <div id="list"></div>
 <div class="foot"><span>Items tagged “suggested” are tips, not IRR requirements. Check your coach for any change.</span><button class="reset" id="reset" type="button">Clear all ticks</button></div>
 </main>
+<dialog class="lb" id="lb" aria-label="HCCCI delegation shirt, enlarged">
+<img src="Purple%20PSITS%20Convention%20Shirt%20Mockup.png" width="1254" height="1254" alt="Purple 14th PSITS Regional Convention shirt, enlarged">
+<button type="button" id="lbx" aria-label="Close enlarged image">&times;</button>
+</dialog>
 <script>
 var S="suggested";
 var D=[
@@ -119,7 +167,7 @@ function save(){try{localStorage.setItem("psits-pack",JSON.stringify(st))}catch(
 var list=document.getElementById("list"),chips=document.getElementById("chips");
 D.forEach(function(s){
  var sec=document.createElement("section");sec.id="s-"+s.id;if(s.b)sec.className="base";
- var h='<h2>'+s.t+'</h2><p class="note">'+s.n+'</p>';
+ var h='<div class="sh"><h2>'+s.t+'</h2><span class="sc"></span></div><p class="note">'+s.n+'</p>';
  s.i.forEach(function(it,k){var key=s.id+k;
   h+='<label class="item"><input type="checkbox" data-k="'+key+'"'+(st.t[key]?" checked":"")+'><span>'+it[0]+(it[1]?'<em class="tag">'+it[1]+'</em>':'')+'</span></label>';});
  sec.innerHTML=h;list.appendChild(sec);
@@ -130,10 +178,11 @@ function render(){
  var tot=0,done=0;
  D.forEach(function(s){var sec=document.getElementById("s-"+s.id);
   var show=s.b||st.e.indexOf(s.id)>-1;sec.hidden=!show;
-  if(show){sec.querySelectorAll("input").forEach(function(c){tot++;if(c.checked)done++})}});
+  if(show){var a=0,b=0;sec.querySelectorAll("input").forEach(function(c){tot++;b++;if(c.checked){done++;a++}});
+   var sc=sec.querySelector(".sc");sc.textContent=a+"/"+b;sc.classList.toggle("done",a===b)}});
  var pc=tot?Math.round(done*100/tot):0;
  document.getElementById("fill").style.width=pc+"%";
- document.getElementById("n").textContent=done+" of "+tot+" packed";
+ document.getElementById("n").textContent=tot&&done===tot?"All packed. See you at the convention!":done+" of "+tot+" packed";
  document.getElementById("pct").textContent=pc+"%";
  document.querySelector(".meter").setAttribute("aria-valuenow",pc);
 }
@@ -143,6 +192,10 @@ chips.addEventListener("click",function(e){var b=e.target.closest(".chip");if(!b
  b.setAttribute("aria-pressed",i>-1?"false":"true");save();render()});
 document.getElementById("reset").addEventListener("click",function(){st.t={};list.querySelectorAll("input").forEach(function(c){c.checked=false});save();render()});
 render();
+var lb=document.getElementById("lb");
+document.getElementById("zoom").addEventListener("click",function(){lb.showModal()});
+document.getElementById("lbx").addEventListener("click",function(){lb.close()});
+lb.addEventListener("click",function(e){if(e.target===lb)lb.close()});
 </script>
 </body>
 </html>
