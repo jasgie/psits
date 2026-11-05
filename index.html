@@ -8,11 +8,11 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,800..900&family=Michroma&family=Source+Sans+3:wght@400;600&display=swap" rel="stylesheet">
 <style>
-:root{color-scheme:light;--outline:#9b82c8;--track:#e6dcf5;--tint:#f3ebfd;--bg:#f7f2fe;--card:#fff;--ink:#1a0f33;--mute:#5b4b7a;--line:#ddd0f2;--brand:#6b21c8;--on-brand:#fff;--head:#2a0f5c;--accent:#f2b705;--focus:#2a0f5c;--collar:#2a0f5c;
+:root{color-scheme:light;--warn-bg:#fff4cc;--warn-ink:#3a2a00;--outline:#9b82c8;--track:#e6dcf5;--tint:#f3ebfd;--bg:#f7f2fe;--card:#fff;--ink:#1a0f33;--mute:#5b4b7a;--line:#ddd0f2;--brand:#6b21c8;--on-brand:#fff;--head:#2a0f5c;--accent:#f2b705;--focus:#2a0f5c;--collar:#2a0f5c;
 --hero-bg:linear-gradient(160deg,#d6b9fb,#b983f3);--hero-ink:#12082b;--circuit:#2a0f5c;
 box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
-@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){color-scheme:dark;--outline:#7f62c4;--track:#2c1b57;--tint:#281752;--bg:#140a2b;--card:#1e1140;--ink:#f3ebff;--mute:#b7a6d9;--line:#3a2868;--brand:#c9a3f7;--on-brand:#1a0a33;--head:#e4d3ff;--focus:#f2b705;--collar:#5a2cc0;--hero-bg:linear-gradient(160deg,#2a0f5c,#3d1782);--hero-ink:#f3ebff;--circuit:#9b6cf0}}
-:root[data-theme="dark"]{color-scheme:dark;--outline:#7f62c4;--track:#2c1b57;--tint:#281752;--bg:#140a2b;--card:#1e1140;--ink:#f3ebff;--mute:#b7a6d9;--line:#3a2868;--brand:#c9a3f7;--on-brand:#1a0a33;--head:#e4d3ff;--focus:#f2b705;--collar:#5a2cc0;--hero-bg:linear-gradient(160deg,#2a0f5c,#3d1782);--hero-ink:#f3ebff;--circuit:#9b6cf0}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){color-scheme:dark;--warn-bg:#3a2d08;--warn-ink:#ffeaa0;--outline:#7f62c4;--track:#2c1b57;--tint:#281752;--bg:#140a2b;--card:#1e1140;--ink:#f3ebff;--mute:#b7a6d9;--line:#3a2868;--brand:#c9a3f7;--on-brand:#1a0a33;--head:#e4d3ff;--focus:#f2b705;--collar:#5a2cc0;--hero-bg:linear-gradient(160deg,#2a0f5c,#3d1782);--hero-ink:#f3ebff;--circuit:#9b6cf0}}
+:root[data-theme="dark"]{color-scheme:dark;--warn-bg:#3a2d08;--warn-ink:#ffeaa0;--outline:#7f62c4;--track:#2c1b57;--tint:#281752;--bg:#140a2b;--card:#1e1140;--ink:#f3ebff;--mute:#b7a6d9;--line:#3a2868;--brand:#c9a3f7;--on-brand:#1a0a33;--head:#e4d3ff;--focus:#f2b705;--collar:#5a2cc0;--hero-bg:linear-gradient(160deg,#2a0f5c,#3d1782);--hero-ink:#f3ebff;--circuit:#9b6cf0}
 html{scroll-padding-top:calc(env(safe-area-inset-top,0px) + 96px)}
 *,*::before,*::after{box-sizing:border-box}
 body{margin:0;background:var(--bg);color:var(--ink);font-family:"Source Sans 3",system-ui,sans-serif;font-size:17px;line-height:1.5}
@@ -58,6 +58,26 @@ section h2{font-size:22px;color:var(--head)}
 .item input:checked{background-color:#6b21c8;border-color:var(--brand);background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='none' stroke='%23fff' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M3 8.5l3.5 3.5L13 4.5'/%3E%3C/svg%3E")}
 .item input:checked+span{color:var(--mute);text-decoration:line-through}
 .tag{font-size:13px;color:var(--mute);border:1px solid var(--line);border-radius:4px;padding:0 5px;margin-left:6px;white-space:nowrap}
+.alert{display:flex;gap:14px;align-items:flex-start;background:var(--warn-bg);color:var(--warn-ink);border:2px solid var(--accent);border-radius:8px;padding:14px 16px;margin:0 0 24px}
+.alert b{flex:none;display:grid;place-items:center;width:32px;height:32px;border-radius:50%;background:var(--accent);color:#2a0f5c;font-family:Archivo,system-ui,sans-serif;font-size:20px}
+.alert h2{font-size:20px;color:inherit}
+.alert p{margin:4px 0 0;font-size:16px}
+.locs{margin:28px 0}
+.locs h2{font-size:22px;color:var(--head);margin-bottom:10px}
+.locs ul{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:12px}
+.locs a{display:block;height:100%;padding:14px 16px;background:var(--card);border:1px solid var(--line);border-left:6px solid var(--brand);border-radius:8px;color:var(--ink);text-decoration:none}
+.locs a:hover{background:var(--tint);border-color:var(--brand)}
+.locs a:focus-visible{outline:3px solid var(--focus);outline-offset:2px}
+.locs b{display:block;font-size:13px;font-weight:600;color:var(--mute);text-transform:uppercase;letter-spacing:.04em}
+.locs span{display:block;font-size:18px;font-weight:600;margin-top:2px}
+.locs small{display:block;color:var(--brand);font-size:14px;font-weight:600;margin-top:6px}
+.mapbox{margin-top:14px}
+.mapbox iframe{display:block;width:100%;height:min(60vh,420px);min-height:300px;margin-top:10px;border:1px solid var(--outline);border-radius:8px;background:var(--track)}
+.embed{margin:28px 0 0}
+.embed h2{font-size:22px;color:var(--head)}
+.embed p{margin:4px 0 12px;color:var(--mute);font-size:15px}
+.embed a{color:var(--brand);font-weight:600}
+.embed iframe{display:block;width:100%;height:min(75vh,640px);min-height:420px;border:1px solid var(--outline);border-radius:8px;background:#fff}
 .shirt{display:flex;flex-wrap:wrap;gap:20px;align-items:center;background:var(--card);border:1px solid var(--line);border-radius:8px;padding:16px;margin:0 0 28px}
 .shirt img{width:100%;max-width:300px;height:auto;aspect-ratio:1;border-radius:6px;background:#fff;flex:none;margin:0 auto}
 .zoom{position:relative;flex:none;width:100%;max-width:300px;margin:0 auto;padding:0;border:1.5px solid var(--outline);border-radius:8px;background:#fff;cursor:zoom-in;overflow:hidden}
@@ -76,7 +96,7 @@ section h2{font-size:22px;color:var(--head)}
 .reset{font:inherit;font-size:14px;min-height:40px;padding:6px 14px;border:1.5px solid var(--outline);border-radius:8px;background:var(--card);color:var(--ink);cursor:pointer}
 .reset:hover{background:var(--tint);border-color:var(--brand)}
 @media (prefers-reduced-motion:reduce){.meter i,.chip{transition:none}}
-@media print{.bar,.pick,.reset{display:none}.hero{background:none;color:#000}.hero::before,.hero::after{display:none}section{break-inside:avoid}}
+@media print{.bar,.pick,.reset,.embed,.mapbox,.zoom span{display:none}.hero{background:none;color:#000}.hero::before,.hero::after{display:none}section{break-inside:avoid}}
 </style>
 </head>
 <body>
@@ -91,6 +111,13 @@ section h2{font-size:22px;color:var(--head)}
 <div class="count"><span id="n">0 of 0 packed</span><span id="pct">0%</span></div>
 </div></div>
 <main>
+<aside class="alert" aria-labelledby="permit-h">
+<b aria-hidden="true">!</b>
+<div>
+<h2 id="permit-h">No permit, no travel.</h2>
+<p>Bring your parent’s or guardian’s signed permit. Delegates without one will not be allowed to travel.</p>
+</div>
+</aside>
 <figure class="shirt">
 <button type="button" class="zoom" id="zoom" aria-label="Enlarge the delegation shirt image"><img src="Purple%20PSITS%20Convention%20Shirt%20Mockup.png" width="1254" height="1254" alt="Purple 14th PSITS Regional Convention shirt with a lavender body, dark purple collar and sleeve trim, and the PSITS wordmark on the front" decoding="async"><span aria-hidden="true">Tap to enlarge</span></button>
 <div>
@@ -105,6 +132,25 @@ section h2{font-size:22px;color:var(--head)}
 </div>
 <div id="list"></div>
 <div class="foot"><span>Items tagged “suggested” are tips, not IRR requirements. Check your coach for any change.</span><button class="reset" id="reset" type="button">Clear all ticks</button></div>
+<section class="embed" aria-labelledby="embed-h">
+<h2 id="embed-h">Convention micro website</h2>
+<p>Schedules and announcements. If the page does not load here, <a href="http://psits2026.ndtc.edu.ph/" target="_blank" rel="noopener noreferrer">open it in a new tab</a>.</p>
+<iframe src="http://psits2026.ndtc.edu.ph/" title="14th PSITS Regional Convention micro website" loading="lazy" referrerpolicy="no-referrer" sandbox="allow-scripts allow-same-origin allow-forms allow-popups"></iframe>
+</section>
+<div class="locs bottom">
+<h2>Locations</h2>
+<ul>
+<li><a href="https://maps.app.goo.gl/FYJTXdAZc6qBnZMv6" target="_blank" rel="noopener noreferrer"><b>Billeting</b><span>Billeting assignments for HCCCI</span><span>Abang-Suizo Elementary School</span><small>Open in Maps (new tab)</small></a></li>
+<li><a href="https://maps.app.goo.gl/kJSgGniSTM5eduRo7" target="_blank" rel="noopener noreferrer"><b>Venue</b><span>Notre Dame of Tacurong College</span><small>Open in Maps (new tab)</small></a></li>
+</ul>
+<div class="mapbox">
+<div class="chips" role="group" aria-label="Choose a location to show on the map" id="mapchips">
+<button type="button" class="chip" aria-pressed="true" data-ll="6.6873863,124.6728434" data-t="Map of the convention venue, Notre Dame of Tacurong College">Venue</button>
+<button type="button" class="chip" aria-pressed="false" data-ll="6.6975858,124.6692334" data-t="Map of the HCCCI billeting site, Abang-Suizo Elementary School">Billeting</button>
+</div>
+<iframe id="map" title="Map of the convention venue, Notre Dame of Tacurong College" src="https://www.google.com/maps?q=6.6873863,124.6728434&z=16&output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade" sandbox="allow-scripts allow-same-origin allow-popups" allowfullscreen></iframe>
+</div>
+</div>
 </main>
 <dialog class="lb" id="lb" aria-label="HCCCI delegation shirt, enlarged">
 <img src="Purple%20PSITS%20Convention%20Shirt%20Mockup.png" width="1254" height="1254" alt="Purple 14th PSITS Regional Convention shirt, enlarged">
@@ -119,7 +165,11 @@ var D=[
 ["Delegation shirt or banner to show school spirit",S],
 ["Beddings: blanket, pillow and sleeping mat or sheet",S],
 ["Toiletries and hygiene kit: toothbrush, soap, towel, deodorant and personal items",S],
-["Mug or tumbler for your morning coffee",S]]},
+["Mug or tumbler for your morning coffee",S],
+["Parent’s or guardian’s signed travel permit (no permit, no travel)"],
+["Proof of payment for registration"],
+["Cookware, if your group plans to cook",S],
+["Camping tent, if your group plans to camp",S]]},
 {id:"prog",c:"Programming",t:"Programming (C++, Python, Java, MySQL)",n:"Two students per entry share one workstation.",i:[
 ["Laptop and charger. The IRR is unclear on whether workstations are provided, so bring one and confirm with your coach."],
 ["Pens and scratch paper",S]]},
@@ -193,6 +243,9 @@ chips.addEventListener("click",function(e){var b=e.target.closest(".chip");if(!b
 document.getElementById("reset").addEventListener("click",function(){st.t={};list.querySelectorAll("input").forEach(function(c){c.checked=false});save();render()});
 render();
 var lb=document.getElementById("lb");
+document.getElementById("mapchips").addEventListener("click",function(e){var b=e.target.closest(".chip");if(!b)return;
+ this.querySelectorAll(".chip").forEach(function(c){c.setAttribute("aria-pressed",c===b?"true":"false")});
+ var m=document.getElementById("map");m.title=b.dataset.t;m.src="https://www.google.com/maps?q="+b.dataset.ll+"&z=16&output=embed"});
 document.getElementById("zoom").addEventListener("click",function(){lb.showModal()});
 document.getElementById("lbx").addEventListener("click",function(){lb.close()});
 lb.addEventListener("click",function(e){if(e.target===lb)lb.close()});
